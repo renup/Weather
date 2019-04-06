@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOR-RG-InE">
-                        <rect key="frame" x="16" y="11" width="42" height="38"/>
+                        <rect key="frame" x="16" y="11" width="236" height="38"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="38" id="ZKb-cY-5bb"/>
                         </constraints>
@@ -27,10 +27,11 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OyQ-TY-Oys">
-                        <rect key="frame" x="66" y="11" width="293" height="38"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OyQ-TY-Oys">
+                        <rect key="frame" x="260" y="11" width="99" height="38"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="38" id="CCj-tA-5dw"/>
+                            <constraint firstAttribute="width" constant="99" id="xOE-Ym-9Qv"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -45,6 +46,11 @@
                     <constraint firstItem="ZOR-RG-InE" firstAttribute="leading" secondItem="VLE-X9-bgw" secondAttribute="leadingMargin" id="sng-7e-8Zb"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="cityName" destination="ZOR-RG-InE" id="LGb-ad-z26"/>
+                <outlet property="temperatureLabel" destination="OyQ-TY-Oys" id="qEU-fU-hpH"/>
+            </connections>
+            <point key="canvasLocation" x="53.600000000000001" y="136.73163418290855"/>
         </tableViewCell>
     </objects>
 </document>

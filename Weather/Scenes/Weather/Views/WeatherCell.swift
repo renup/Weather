@@ -11,7 +11,11 @@ import UIKit
 
 final class WeatherCell: UITableViewCell {
     
-    func configureCell() {
-        
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var cityName: UILabel!
+    
+    func configureCell(_ city: City) {
+        self.cityName.text = city.name
+        self.temperatureLabel.text = city.temp?.description
     }
 }

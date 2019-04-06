@@ -24,5 +24,19 @@ final class WeatherViewModel {
         return task
     }
     
+    @discardableResult
+    static func fetchWeatherDetail(city: String, completion: @escaping WeatherDetailsResponse) -> URLSessionTask? {
+        let task = WeatherRouter.getWeatherDetail(for: city, completion: { (weatherDetail, error) in
+            DispatchQueue.main.async {
+                if error != nil {
+                    completion(nil, error)
+                } else {
+                    completion(weatherDetail, nil)
+                }
+            }
+        })
+        return task
+    }
+    
 
 }

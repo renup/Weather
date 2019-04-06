@@ -16,6 +16,8 @@ class WeatherViewController: UIViewController {
         }
     }
     
+    var selectedCity: String = ""
+    
     struct Constants {
         static let cellIdentifier = "weatherCell"
     }
@@ -71,7 +73,15 @@ extension WeatherViewController: UITableViewDataSource {
 
 extension WeatherViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let city = cities[indexPath.row]
+        self.selectedCity = city.name ?? ""
+        performSegue(withIdentifier: "weatherToDetailsVC", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailVC = segue.destination as? WeatherDetailsViewController {
+            detailVC.cityName = self.selectedCity
+        }
     }
 }
 

@@ -17,6 +17,8 @@
 		D775A032225939E200644107 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D775A031225939E200644107 /* APIConfiguration.swift */; };
 		D775A03522593A0B00644107 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D775A03422593A0B00644107 /* WeatherModel.swift */; };
 		D775A03922593F4400644107 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D775A03822593F4400644107 /* WeatherViewModel.swift */; };
+		D775A03E22595B0700644107 /* WeekDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D775A03D22595B0700644107 /* WeekDayCell.xib */; };
+		D775A04022595B7B00644107 /* WeekdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D775A03F22595B7B00644107 /* WeekdayCell.swift */; };
 		D7C7E0F22259301000B9AA03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C7E0F12259301000B9AA03 /* AppDelegate.swift */; };
 		D7C7E0F42259301000B9AA03 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C7E0F32259301000B9AA03 /* WeatherViewController.swift */; };
 		D7C7E0F72259301000B9AA03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7C7E0F52259301000B9AA03 /* Main.storyboard */; };
@@ -54,6 +56,8 @@
 		D775A031225939E200644107 /* APIConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		D775A03422593A0B00644107 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		D775A03822593F4400644107 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		D775A03D22595B0700644107 /* WeekDayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeekDayCell.xib; sourceTree = "<group>"; };
+		D775A03F22595B7B00644107 /* WeekdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayCell.swift; sourceTree = "<group>"; };
 		D7C7E0EE2259301000B9AA03 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7C7E0F12259301000B9AA03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7C7E0F32259301000B9AA03 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 		D775A014225935CF00644107 /* WeatherDetails */ = {
 			isa = PBXGroup;
 			children = (
+				D775A03C2259507100644107 /* Views */,
 				D775A015225935F500644107 /* WeatherDetailsViewController.swift */,
 			);
 			path = WeatherDetails;
@@ -194,6 +199,15 @@
 				D775A03422593A0B00644107 /* WeatherModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D775A03C2259507100644107 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D775A03D22595B0700644107 /* WeekDayCell.xib */,
+				D775A03F22595B7B00644107 /* WeekdayCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D7C7E0E52259301000B9AA03 = {
@@ -357,6 +371,7 @@
 			files = (
 				D775A01A2259366300644107 /* WeatherCell.xib in Resources */,
 				D7C7E0FC2259301200B9AA03 /* LaunchScreen.storyboard in Resources */,
+				D775A03E22595B0700644107 /* WeekDayCell.xib in Resources */,
 				D7C7E0F92259301200B9AA03 /* Assets.xcassets in Resources */,
 				D7C7E0F72259301000B9AA03 /* Main.storyboard in Resources */,
 			);
@@ -393,6 +408,7 @@
 				D7C7E0F42259301000B9AA03 /* WeatherViewController.swift in Sources */,
 				D775A0282259399900644107 /* UIViewController+.swift in Sources */,
 				D7C7E0F22259301000B9AA03 /* AppDelegate.swift in Sources */,
+				D775A04022595B7B00644107 /* WeekdayCell.swift in Sources */,
 				D775A016225935F500644107 /* WeatherDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

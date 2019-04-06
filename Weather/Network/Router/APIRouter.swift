@@ -24,7 +24,7 @@ extension APIRouter {
         let path = route.path
         
         guard var urlComponents = URLComponents(string: path) else { return nil }
-        if route.parameters.count > 1 {
+        if route.parameters.count >= 1 {
             urlComponents.queryItems = route.parameters
         }
         

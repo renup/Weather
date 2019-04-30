@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nem-S5-rPu">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nem-S5-rPu">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="dHN-Zm-vsV"/>
@@ -29,6 +28,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nem-S5-rPu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JCh-7I-Dho"/>
+                            <constraint firstItem="nem-S5-rPu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Lnk-iU-vbD"/>
+                            <constraint firstItem="nem-S5-rPu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZJE-KM-XWP"/>
+                            <constraint firstItem="nem-S5-rPu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="t8M-no-lyz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="0sX-AF-Jde"/>

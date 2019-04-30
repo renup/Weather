@@ -41,11 +41,11 @@ extension APIRouter {
     static func performRequest<T: Decodable>(route: APIConfiguration, completion: @escaping ((T?, Error?) -> Void)) -> URLSessionTask? {
         
         guard let url = getURL(route: route) else { return nil }
-
+        
         let dataTask = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
             if let dt = data {
                 #if DEBUG
-               print( String(describing: dt))
+                print( String(describing: dt))
                 #endif
                 do{
                     let result = try JSONDecoder().decode(T.self, from: dt)
@@ -61,5 +61,5 @@ extension APIRouter {
         dataTask.resume()
         return dataTask
     }
-
+    
 }

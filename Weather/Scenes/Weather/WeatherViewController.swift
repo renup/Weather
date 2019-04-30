@@ -10,7 +10,7 @@ import UIKit
 
 class WeatherViewController: UIViewController {
     
-    var cities: [City] = [] {
+    var countryArray: [Country] = [] {
         didSet {
             weatherTableView.reloadData()
         }
@@ -31,50 +31,51 @@ class WeatherViewController: UIViewController {
     }
     
     private func setUpWeatherScene() {
-        weatherTableView.register(UINib(nibName: "WeatherCell", bundle: nil), forCellReuseIdentifier: "weatherCell")
+        weatherTableView.register(UINib(nibName: "WeatherCell", bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
+        weatherTableView.tableFooterView = UIView()
     }
     
     private func getWeather() {
-        
-        WeatherViewModel.fetchWeather {[weak self] (weather, error) in
+        WeatherViewModel.fetchWeather {[weak self] (countryArray, error) in
             if error != nil {
                 //show alert
             } else {
-                guard let weatherInfo = weather, let cities = weatherInfo.cities else { return }
-                self?.cities = cities
+                guard let countryArr = countryArray else { return }
+                self?.countryArray = countryArr
             }
         }
     }
-
-
+    
 }
 
 extension WeatherViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return countryArray.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cities.count
+        return countryArray[section].cities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier) as! WeatherCell
-        cell.configureCell(cities[indexPath.row])
+        let country = countryArray[indexPath.section]
+        cell.configureCell(country.cities[indexPath.row])
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        <#code#>
-//    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return countryArray[section].name
+    }
     
 }
 
 extension WeatherViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let city = cities[indexPath.row]
-        self.selectedCity = city.name ?? ""
+        tableView.deselectRow(at: indexPath, animated: true)
+        let country = countryArray[indexPath.section]
+        selectedCity = country.cities[indexPath.row].name!
         performSegue(withIdentifier: "weatherToDetailsVC", sender: nil)
     }
     
@@ -84,4 +85,6 @@ extension WeatherViewController: UITableViewDelegate {
         }
     }
 }
+
+
 

@@ -9,14 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeekdayCell" customModule="Weather" customModuleProvider="target">
-            <connections>
-                <outlet property="dayDescriptionLabel" destination="C7v-4h-f3X" id="it0-eu-kii"/>
-                <outlet property="dayLabel" destination="iWX-J3-egE" id="Lik-fA-jvP"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="weekdayCell" id="4pw-Dk-flS">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="weekdayCell" id="4pw-Dk-flS" customClass="WeekdayCell" customModule="Weather">
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4pw-Dk-flS" id="akj-r3-czq">
@@ -27,13 +22,13 @@
                         <rect key="frame" x="16" y="11" width="343" height="20.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWX-J3-egE">
-                                <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="0.0" y="0.0" width="44.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7v-4h-f3X">
-                                <rect key="frame" x="50" y="0.0" width="293" height="20.5"/>
+                                <rect key="frame" x="52.5" y="0.0" width="290.5" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="206" id="uwv-Du-Ywh"/>
                                 </constraints>
@@ -51,6 +46,10 @@
                     <constraint firstItem="Hhc-wB-lHH" firstAttribute="leading" secondItem="akj-r3-czq" secondAttribute="leadingMargin" id="T7K-hD-dNf"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="dayDescriptionLabel" destination="C7v-4h-f3X" id="zEu-ze-UaK"/>
+                <outlet property="dayLabel" destination="iWX-J3-egE" id="gHC-Pm-UNu"/>
+            </connections>
             <point key="canvasLocation" x="157.59999999999999" y="57.571214392803604"/>
         </tableViewCell>
     </objects>

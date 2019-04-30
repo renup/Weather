@@ -16,7 +16,7 @@ final class WeatherDetailsViewController: UIViewController {
     }
     
     var cityName: String = ""
-    var weekdayDataSource: [WeekDay] = [] {
+    var weekdayDataSource: WeekDay? {
         didSet {
             forecastTableView.reloadData()
         }
@@ -36,7 +36,19 @@ final class WeatherDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        stripSpaces()
+        setupForecastTableView()
         getWeatherDetails()
+    }
+    
+    private func setupForecastTableView() {
+        forecastTableView.register(UINib(nibName: "WeekDayCell", bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
+        forecastTableView.tableFooterView = UIView()
+    }
+    
+    private func stripSpaces() {
+        let stripped = cityName.replacingOccurrences(of: " ", with: "")
+        cityName = stripped
     }
     
     private func getWeatherDetails() {
@@ -51,7 +63,7 @@ final class WeatherDetailsViewController: UIViewController {
                 self.weatherFeelsLikeDescriptionLabel.text = weatherDetails.feelsLike?.description
                 self.humidityLabel.text = weatherDetails.humidity?.description
                 self.rainChanceLabel.text = weatherDetails.rainChance?.description
-                print("seven day = \(weatherDetails.sevenDay)")
+                self.weekdayDataSource = weatherDetails.sevenDay
             }
         }
     }
@@ -59,14 +71,15 @@ final class WeatherDetailsViewController: UIViewController {
 }
 
 extension WeatherDetailsViewController: UITableViewDataSource {
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return weekdayDataSource.count
+        return Weekdays.allCases.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier) as! WeekdayCell
-        cell.configureCell(for: weekdayDataSource[indexPath.row])
+        guard let dataSource = weekdayDataSource else { return UITableViewCell() }
+        cell.configureCell(for: dataSource, indxPath: indexPath)
         return cell
     }
 }
